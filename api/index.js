@@ -64,8 +64,8 @@ app.post("/api/refresh",(req,res)=>{
             return console.log(err)
         }
         refreshTokens = refreshTokens.filter((token)=>token !== refreshToken);
-        /* a linha acima vai atualizar o array e garantir que não tenha o refresh atual,para trocá-lo por um novo-foi o que eu entendi*/ 
-        res.status(200).json(refreshTokens);
+        /* The line above will make shure the current api is not in the array*/ 
+        
         
         const newAccessToken = GenAccessToken(user);
         const newRefreshToken = GenRefreshToken(user);
